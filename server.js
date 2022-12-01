@@ -13,11 +13,20 @@ const path = require('path');
 //inicialize express
 const app = express();
 //server port
-const PORT = process.env.PORT || 8080; //important when deploy with heroku
+const PORT = process.env.PORT || 8080; //has to be like that! >> important when deploy with heroku
 
 
 //bring in (import) the routes to be used by the server
 const routes = require('./routes/api');
+
+
+//connect to mongoDB cluster or local and make it work with heroku (process.env.)
+const MONGODB_URI = 'mongodb+srv://adminTEST:MerryXmas@mernblog.315eixt.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mern_blog'  , {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    family: 4 // makes mongodb look for IPVA4 
+});
 
 
 // //connect to mongoDB cluster ** needs to be protected
@@ -29,12 +38,12 @@ const routes = require('./routes/api');
 // });
 
 
-//connect to mongoDB LOCAL (para juntar o local e o cluster ao msm tempo add MONGO_URI || localurl)
-mongoose.connect('mongodb://localhost:27017/mern_blog', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    family: 4 // makes mongodb look for IPVA4 
-});
+// //connect to mongoDB LOCAL (para juntar o local e o cluster ao msm tempo add MONGO_URI || localurl)
+// mongoose.connect('mongodb://localhost:27017/mern_blog', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     family: 4 // makes mongodb look for IPVA4 
+// });
 
 //verify mongoDB connection
 mongoose.connection.on('connected', () => {
@@ -44,6 +53,12 @@ mongoose.connection.on('connected', () => {
 //Data Parsing
 app.use(express.json()); //this makes the req.body (api.js) see all the content to show in the console
 app.use(express.urlencoded({ extended: false}));//false is for simple objs
+
+//create connection to heroku //needs to build client in cmd *when ready* and refer to it in server package.json
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
 
 // //Blog Schema >>SENT TO MODEL FOLDER
 // const Schema = mongoose.Schema;
