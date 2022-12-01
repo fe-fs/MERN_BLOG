@@ -20,7 +20,13 @@ const PORT = process.env.PORT || 8080; //important when deploy with heroku
 const routes = require('./routes/api');
 
 
-
+// //connect to mongoDB cluster ** needs to be protected
+// const MONGODB_URI = 'mongodb+srv://adminTEST:MerryXmas@mernblog.315eixt.mongodb.net/?retryWrites=true&w=majority';
+// mongoose.connect(MONGODB_URI , {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     family: 4 // makes mongodb look for IPVA4 
+// });
 
 
 //connect to mongoDB LOCAL (para juntar o local e o cluster ao msm tempo add MONGO_URI || localurl)

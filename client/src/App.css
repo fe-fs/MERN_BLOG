@@ -1,0 +1,60 @@
+body{
+  background-color: rgb(181, 201, 183);
+  font-size:  20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  
+}
+.app {
+  padding: 10px;
+}
+
+h2{
+  background-color: rgb(152, 170, 153);
+  border-radius: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.form-input{
+  padding: 20px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-post_display{
+  font-size:  15px;
+  border: 3px solid rgb(244, 248, 250);
+  border-radius: 10px;
+  margin: 5px 0px;
+  padding: 10px;
+}
+
+button {
+  padding: 10px  40px;
+  background-color: rgb(181, 201, 183);
+  color: #fff;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(146, 163, 148);
+  color: rgb(221, 217, 217);
+}
+
+.form-input input, .form-input textarea {
+
+  font-size:  15px;
+  padding: 10px  40px;
+  background-color: rgb(156, 173, 158);
+  color: #fff;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  outline: none;
+}
