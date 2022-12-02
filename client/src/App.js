@@ -99,6 +99,7 @@ class App extends React.Component {
     //JSX
     return(
       <div className="app">
+      <title>MERN Blog by fefs</title>
       <h2>Welcome to my Blog</h2>
       <form onSubmit={this.submit} /*attach on submit event funtion to make able to the user to send the post */>
         <div className="form-input">
@@ -121,8 +122,10 @@ class App extends React.Component {
             >
             </textarea>
         </div>
-
+      <div className='center'>
       <button>Submit</button>
+      </div>
+      
       </form>
 
       <div className='blog-post'>

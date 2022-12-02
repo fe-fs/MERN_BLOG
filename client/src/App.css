@@ -18,9 +18,16 @@ h2{
   justify-content: center;
 
 }
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
 .form-input{
-  padding: 20px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +37,7 @@ h2{
   font-size:  15px;
   border: 3px solid rgb(244, 248, 250);
   border-radius: 10px;
-  margin: 5px 0px;
+  margin: 10px;
   padding: 10px;
 }
 
@@ -41,6 +48,7 @@ button {
   border-radius: 30px;
   border: 3px solid #fff;
   cursor: pointer;
+ 
 }
 
 button:hover{
@@ -51,6 +59,7 @@ button:hover{
 .form-input input, .form-input textarea {
 
   font-size:  15px;
+  margin: 10px 0px;
   padding: 10px  40px;
   background-color: rgb(156, 173, 158);
   color: #fff;
