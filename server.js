@@ -21,7 +21,7 @@ const routes = require('./routes/api');
 
 
 //connect to mongoDB cluster or local and make it work with heroku (process.env.)
-const MONGODB_URI = 'mongodb+srv://adminTEST:MerryXmas@mernblog.315eixt.mongodb.net/?retryWrites=true&w=majority';
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mern_blog'  , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -29,21 +29,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mern_blog
 });
 
 
-// //connect to mongoDB cluster ** needs to be protected
-// const MONGODB_URI = 'mongodb+srv://adminTEST:MerryXmas@mernblog.315eixt.mongodb.net/?retryWrites=true&w=majority';
-// mongoose.connect(MONGODB_URI , {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     family: 4 // makes mongodb look for IPVA4 
-// });
-
-
-// //connect to mongoDB LOCAL (para juntar o local e o cluster ao msm tempo add MONGO_URI || localurl)
-// mongoose.connect('mongodb://localhost:27017/mern_blog', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     family: 4 // makes mongodb look for IPVA4 
-// });
 
 //verify mongoDB connection
 mongoose.connection.on('connected', () => {
