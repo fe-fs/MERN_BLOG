@@ -18,6 +18,11 @@ h2{
   justify-content: center;
 
 }
+h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .center{
   display: flex;

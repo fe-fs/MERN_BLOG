@@ -101,6 +101,7 @@ class App extends React.Component {
       <div className="app">
       <title>MERN Blog by fefs</title>
       <h2>Welcome to my Blog</h2>
+      <h4>Now autorefresh changes from github repo to heroku :D</h4>
       <form onSubmit={this.submit} /*attach on submit event funtion to make able to the user to send the post */>
         <div className="form-input">
           <input
