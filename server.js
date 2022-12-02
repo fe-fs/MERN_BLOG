@@ -20,8 +20,7 @@ const PORT = process.env.PORT || 8080; //has to be like that! >> important when 
 const routes = require('./routes/api');
 
 
-//connect to mongoDB cluster or local and make it work with heroku (process.env.)
-
+//connect to mongoDB cluster VAR at heroku or local and make it work with heroku (process.env.)
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mern_blog'  , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
