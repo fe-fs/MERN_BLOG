@@ -10,7 +10,8 @@
     "postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n server,client -c red,green \"nodemon server.js\" \"npm run client\""
+    "dev": "concurrently -n server,client -c red,green \"nodemon server.js\" \"npm run client\"",
+    "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build -- prefix client"
   },
   "keywords": [],
   "author": "",

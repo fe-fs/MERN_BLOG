@@ -41,6 +41,8 @@ app.use(express.urlencoded({ extended: false}));//false is for simple objs
 //create connection to heroku //needs to build client in cmd *when ready* and refer to it in server package.json
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
+    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  
 }
 
 
